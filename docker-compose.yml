@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: featureflags-db
+    environment:
+      POSTGRES_DB: featureflags
+      POSTGRES_USER: featureflags
+      POSTGRES_PASSWORD: featureflags
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
